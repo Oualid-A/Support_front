@@ -1,0 +1,72 @@
+<form role="form" (submit)="makeRequest()"> 
+    <h3>Personal information</h3>
+    <p>Information entered here will be used to create your account.</p>
+    <div class="form-group form-flex">
+        <div class="half-group">
+               <label for="firstName">First name</label>
+                <input type="text" name="firstName"  class="form-control" placeholder="John" [(ngModel)]="request.firstName" required="required">
+        </div>
+        <div class="half-group">
+            <label for="lastName">Last name</label>
+            <input type="text" name="lastName"  class="form-control" placeholder="Doe" [(ngModel)]="request.lastName" required="required">
+        </div> 
+     </div>  
+     <div class="form-group">
+        <label for="numTel">Phone number</label>
+        <input type="numTel" name="numTel"  class="form-control" placeholder="+212 6 0000 0000"  [(ngModel)]="request.numTel" required="required">
+    </div>
+    <div class="form-group">
+        <label for="Entreprise">Entreprise</label>
+        <input type="Entreprise" name="Entreprise"  class="form-control" placeholder="your company name" [(ngModel)]="request.Entreprise" required="required">
+    </div>                  
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email"  class="form-control" placeholder="example@example.com"  [(ngModel)]="request.email" required="required">
+    </div>                          
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password"  class="form-control" placeholder="Enter a strong password like you." [(ngModel)]="request.password" required="required">
+        <password-strength-meter [password]="request.password" ></password-strength-meter>
+    </div>
+        
+    
+    <h3 class="seconda">Request Information</h3>
+    <div class="form-group">
+        <label for="type">How can we serve you?</label>
+        <select id="service" name="service" [(ngModel)]="request.service">
+            <option value="code">Coding & Web Development</option>
+            <option value="seo">Search engine Optimization (SEO)</option>
+            <option value="marketing">eMarketing & PPC Ads</option>
+            <option value="secu">Software Maintenance & Security</option>
+          </select>
+    </div>
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" name="title"  class="form-control" placeholder="Enter your request title.." 
+        [(ngModel)]="request.title" required="required">
+    </div>
+    <div class="form-group form-flex">
+        <div class="half-group">
+               <label for="deadline">Pick a deadline</label>
+                <input type="date" name="deadline" class="date"  [(ngModel)]="request.deadline" required="required">
+        </div>
+        <div class="half-group">
+            <label for="budget">Budget</label>
+            <img src="/assets/dollar.svg" alt="dollar">
+            <input type="number" name="budget"  class="budget"  [(ngModel)]="request.budget" required="required">
+        </div>
+     </div>  
+     <div class="form-group">
+        <label for="Document">Document</label>
+        <input type="file" name="Document"  class="form-control" placeholder="Enter your  Document.." 
+        [(ngModel)]="request.Document" required="required">
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="8" [(ngModel)]="request.description" 
+        ></textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" name="submit" class="btn">Submit</button> 
+  </div>     
+</form>
